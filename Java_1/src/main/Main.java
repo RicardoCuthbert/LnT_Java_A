@@ -130,6 +130,7 @@ public class Main {
 		
 		int a;
 		do {
+			a = 0;
 			System.out.println("1. View");
 			System.out.println("2. Add");
 			System.out.println("3. Delete");
@@ -152,11 +153,9 @@ public class Main {
 				break;
 			}
 			default:
-				throw new IllegalArgumentException("Unexpected value: " + a);
+				out.println("Invalid option! Please choose again");
 			}
 		} while (a != 4);
-		
-		
 		out.close();
 	}
 }

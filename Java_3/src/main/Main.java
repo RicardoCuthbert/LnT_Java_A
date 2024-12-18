@@ -12,6 +12,7 @@ public class Main {
 	
 	public Main() {
 		// Array
+		// Declare Array
 		// cara 1
 		String[] makanan = {"Bulgogi", "Pizza", "Kimbab", "Cookie", "Burger"};
 		System.out.println(makanan.length);

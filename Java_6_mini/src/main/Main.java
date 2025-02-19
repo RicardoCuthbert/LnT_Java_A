@@ -94,7 +94,7 @@ public class Main {
 	
 	public void deleteVehicle() {
 		viewVehicle();
-		System.out.println("Please enter the index of vehicle");
+		System.out.print("Please enter the index of vehicle: ");
 		int index = scan.nextInt();
 		scan.nextLine();
 		list.remove(index-1);

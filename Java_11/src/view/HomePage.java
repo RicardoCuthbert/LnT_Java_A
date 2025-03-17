@@ -46,6 +46,8 @@ public class HomePage {
 	
 	private GridPane gp = new GridPane();
 	
+	private Furniture selected;
+	
 	private ObservableList<Furniture> list = FXCollections.observableArrayList();
 
 	public HomePage(Stage stage) {
@@ -58,6 +60,7 @@ public class HomePage {
 		this.set_style();
 		this.set_column();
 		this.handle_button();
+		this.setListener();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -187,6 +190,20 @@ public class HomePage {
 			alert.setContentText("Furniture added successfully!");
 			alert.showAndWait();
 			this.populate_table();
+		});
+	}
+	
+	private void setListener() {
+		table.getSelectionModel().selectedItemProperty().addListener((obs, oldValue, newValue) -> {
+
+			if (newValue != null) {
+				this.selected = newValue;
+				id_tf.setText(newValue.getId());
+				name_tf.setText(newValue.getName());
+				type_cb.setPromptText(newValue.getType());
+				price_tf.setText(String.valueOf(newValue.getPrice()));
+
+			}
 		});
 	}
 }
